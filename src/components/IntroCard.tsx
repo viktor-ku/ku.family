@@ -1,4 +1,4 @@
-import s from '../components/Card.module.css'
+import s from '../components/IntroCard.module.css'
 
 export default function Card({ name }: { name: string }) {
   return (

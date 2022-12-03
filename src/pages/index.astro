@@ -1,19 +1,20 @@
 ---
 import "../styles/base.css";
-import IntroCard from "../components/IntroCard.jsx"
-import s from "../components/IntroCard.module.css"
+import IntroCard from "../components/IntroCard.jsx";
+import s from "../components/IntroCard.module.css";
+import Page from "../layouts/Page.astro";
 ---
 
-<div class="flex justify-around h-screen">
-
-  <IntroCard name="Viktor" id={s.viktor!} client:load>
-    software engineer.
-  </IntroCard>
-  <IntroCard name="Anita" id={s.anita!} client:load>
-    artist. choreographer.
-  </IntroCard>
-  <IntroCard name="Aleksey" id={s.aleksey!} client:load>
-    concept artist.
-  </IntroCard>
-
-</div>
+<Page title="ku.family">
+  <div class="flex justify-around h-screen">
+    <IntroCard name="Viktor" id={s.viktor!} client:load>
+      software engineer.
+    </IntroCard>
+    <IntroCard name="Anita" id={s.anita!} client:load>
+      artist. choreographer.
+    </IntroCard>
+    <IntroCard name="Aleksey" id={s.aleksey!} client:load>
+      concept artist.
+    </IntroCard>
+  </div>
+</Page>

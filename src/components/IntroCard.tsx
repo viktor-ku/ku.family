@@ -1,8 +1,15 @@
 import s from '../components/IntroCard.module.css'
 
 export default function Card({ name, children, id }: { id: string, name: string, children: any }) {
+  function press() {
+    document.body.classList.add('out')
+    setTimeout(() => {
+      window.location.assign(`/${name.toLowerCase()}`)
+    }, 200)
+  }
+
   return (
-    <button class={s.card}>
+    <button class={s.card} onClick={press}>
       <main>
         <h1 class={`${s.title} ${id}`}>{name}</h1>
         <h2 class={s.subtitle}>

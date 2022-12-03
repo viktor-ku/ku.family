@@ -1,19 +1,19 @@
 ---
 import "../styles/base.css";
-import s from "../components/IntroCard.module.css";
-import Card from "../components/IntroCard.js";
+import IntroCard from "../components/IntroCard.jsx"
+import s from "../components/IntroCard.module.css"
 ---
 
 <div class="flex justify-around h-screen">
 
-  <Card name="Viktor" id={s.viktor!}>
+  <IntroCard name="Viktor" id={s.viktor!} client:load>
     software engineer.
-  </Card>
-  <Card name="Anita" id={s.anita!}>
+  </IntroCard>
+  <IntroCard name="Anita" id={s.anita!} client:load>
     artist. choreographer.
-  </Card>
-  <Card name="Aleksey" id={s.aleksey!}>
+  </IntroCard>
+  <IntroCard name="Aleksey" id={s.aleksey!} client:load>
     concept artist.
-  </Card>
+  </IntroCard>
 
 </div>

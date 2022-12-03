@@ -5,3 +5,9 @@
 html, body {
   background: #0d0e10;
 }
+
+body.out {
+  transform: translateY(-3rem) scale(0.95);
+  opacity: 0;
+  transition: all .2s ease;
+}

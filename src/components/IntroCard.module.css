@@ -4,40 +4,46 @@
   flex: 1 1 0%;
   justify-content: center;
   align-items: center;
-  background: rgba(0, 0, 0, 0);
-  border-radius: 2rem;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0)
+  );
+  outline: none;
 }
-
 .card:hover {
-  background: rgba(0, 0, 0, .1);
-  transition: background .3s cubic-bezier(0.22, 0.28, 0.54, 0.34);
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, .05),
+    rgba(0, 0, 0, .2)
+  );
 }
 
 .title {
-  transform: scale(0.9);
-}
-.more {
-  visibility: hidden;
-  color: rgba(200, 200, 200, 0);
+  @apply text-5xl;
+  color: rgba(255, 255, 255, .9);
   font-weight: 200;
 }
+.more {
+  color: rgba(200, 200, 200, 0);
+  font-weight: 200;
+  transition: color .1s cubic-bezier(0.22, 0.28, 0.54, 0.34);
+}
 .arrow {
-  fill: rgba(200, 200, 200, .5);
   width: 3rem;
+  fill: rgba(200, 200, 200, .5);
   transform: scale(0.9);
+  transition-property: transform fill;
+  transition: .1s ease-out;
 }
 
-.card:hover .title {
-  transition: transform 0.1s cubic-bezier(0.22, 0.28, 0.54, 0.34);
+.card:hover .more {
+  color: rgba(255, 255, 255, 1);
+  transition: color .1s cubic-bezier(0.22, 0.28, 0.54, 0.34);
 }
 .card:hover .arrow {
   transform: translateY(1rem);
   fill: rgba(200, 200, 200, .9);
   transition-property: transform fill;
   transition: .1s cubic-bezier(0.22, 0.28, 0.54, 0.34);
-}
-.card:hover .more {
-  visibility: visible;
-  color: rgba(255, 255, 255, 1);
-  transition: color .1s cubic-bezier(0.22, 0.28, 0.54, 0.34);
 }

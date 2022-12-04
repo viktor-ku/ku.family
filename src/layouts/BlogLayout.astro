@@ -1,0 +1,43 @@
+---
+import "../styles/base.css";
+import { format } from "date-fns";
+
+interface Props {
+  title: string;
+  timestamp: number;
+  author: "Viktor";
+}
+
+const { title, timestamp, author } = Astro.props as Props;
+
+const date = format(timestamp, "MMMM do, uuuu");
+const padding = "p-4";
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{author} | {title}</title>
+  </head>
+  <body class="blog">
+    <div class="wrapper m-auto">
+      <header class={`${padding}`}>
+        <h1 class="text-4xl text-white font-extralight">{title}</h1>
+        <p class="font-extralight text-sm">{date}</p>
+      </header>
+      <main class={`${padding} text-lg`}>
+        <slot />
+      </main>
+    </div>
+  </body>
+</html>
+
+<style>
+  .wrapper {
+    max-width: 56rem;
+    min-width: 40vw;
+  }
+</style>

@@ -1,14 +1,24 @@
 ---
 import "../styles/base.css";
 import { format } from "date-fns";
+import type { MarkdownLayoutProps } from "astro";
 
-interface Props {
+interface LayoutProps {
+  title?: string;
+  timestamp?: number;
+  author?: "Viktor";
+}
+
+interface Props extends MarkdownLayoutProps<LayoutProps> {
   title: string;
   timestamp: number;
   author: "Viktor";
 }
 
-const { title, timestamp, author } = Astro.props as Props;
+const { frontmatter, ...props } = Astro.props as Props;
+const title = frontmatter.title ?? props.title;
+const timestamp = frontmatter.timestamp ?? props.timestamp;
+const author = frontmatter.author ?? props.author;
 
 const date = format(timestamp, "MMMM do, uuuu");
 const padding = "p-4";
@@ -34,6 +44,28 @@ const padding = "p-4";
     </div>
   </body>
 </html>
+
+<style is:global>
+  .blog main p {
+    padding-bottom: 2rem;
+  }
+  .blog main h3::before,
+  .blog main h4::before {
+    content: "#";
+    display: inline-block;
+    margin-right: 0.5rem;
+  }
+  .blog main h3,
+  .blog main h4 {
+    padding-bottom: 2rem;
+  }
+  .blog main h3 {
+    @apply text-2xl;
+  }
+  .blog main h4 {
+    @apply text-xl;
+  }
+</style>
 
 <style>
   .wrapper {

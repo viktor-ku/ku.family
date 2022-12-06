@@ -45,6 +45,18 @@ body.out {
 .blog main h3 {
   @apply text-2xl;
 }
+.blog h1,
+.blog h2,
+.blog h3,
+.blog h4,
+.blog h5,
+.blog h6 {
+  font-family: 'PT Serif', serif;
+  font-weight: 400;
+}
+.blog h1 {
+  @apply text-5xl;
+}
 .blog main h4 {
   @apply text-xl;
 }

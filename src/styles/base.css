@@ -27,10 +27,12 @@ body.out {
   transform: translateY(-.15rem);
   font-family: monospace;
   border-radius: .25rem;
-  border-bottom: 1px white solid;
+  border-bottom: 1px rgba(255, 255, 255, 0.75) solid;
+  font-weight: 400;
 }
 .blog main code:hover {
   background-color: rgba(255, 255, 255, 0.1);
+  border-bottom: 1px rgba(255, 255, 255, 0.25) solid;
   cursor: default;
 }
 

@@ -1,0 +1,47 @@
+---
+import Page from "../../../layouts/Page.astro";
+import "../../../styles/base.css";
+---
+
+<Page title="Invoices">
+  <div class="flex h-screen">
+    <div class="bg-white z-10 w-[16rem] print:hidden">sidebar.</div>
+    <div class="bg-gray-400 flex-1 flex justify-center items-center flex-col">
+      <h1
+        class="select-none uppercase font-semibold text-lg text-gray-300 text-center mb-4 print:hidden"
+      >
+        PDF Preview.
+      </h1>
+      <section
+        class="sheet bg-white shadow-md shadow-black/10 print:shadow-none flex flex-col"
+      >
+        <div class="h-16 bg-gray-100"></div>
+        <header class="flex justify-between p-16 pt-12">
+          <div class="flex flex-col">
+            <h1>Invoice no 21011</h1>
+            <div>info.</div>
+            <div>client.</div>
+          </div>
+          <div>
+            <p class="text-2xl">Groiku OU</p>
+          </div>
+        </header>
+      </section>
+    </div>
+  </div>
+</Page>
+
+<style>
+  .sheet {
+    --w: 800px;
+    --a4-ratio: 1.4151260504201681;
+    width: var(--w);
+    height: calc(var(--w) * var(--a4-ratio));
+  }
+  @media print {
+    .sheet {
+      width: 100vw;
+      height: 100vh;
+    }
+  }
+</style>

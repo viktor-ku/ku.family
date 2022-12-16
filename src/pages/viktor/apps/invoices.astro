@@ -1,6 +1,7 @@
 ---
 import Page from "../../../layouts/Page.astro";
 import "../../../styles/base.css";
+import PdfPreview from "./PdfPreview";
 ---
 
 <Page title="Invoices">
@@ -13,19 +14,9 @@ import "../../../styles/base.css";
         PDF Preview.
       </h1>
       <section
-        class="sheet bg-white shadow-md shadow-black/10 print:shadow-none flex flex-col"
+        class="sheet bg-white shadow-md shadow-black/10 print:shadow-none"
       >
-        <div class="h-16 bg-gray-100"></div>
-        <header class="flex justify-between p-16 pt-12">
-          <div class="flex flex-col">
-            <h1>Invoice no 21011</h1>
-            <div>info.</div>
-            <div>client.</div>
-          </div>
-          <div>
-            <p class="text-2xl">Groiku OU</p>
-          </div>
-        </header>
+        <PdfPreview />
       </section>
     </div>
   </div>
